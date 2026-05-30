@@ -1,4 +1,4 @@
-package com.example;
+package com.runesky;
 
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
@@ -6,7 +6,7 @@ import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.Range;
 
 @ConfigGroup("videoskyboxtest")
-public interface ExampleConfig extends Config
+public interface RuneskyVideoConfig extends Config
 {
 	enum VideoAlignment
 	{

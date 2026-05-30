@@ -1,4 +1,4 @@
-package com.example;
+package com.runesky;
 
 import com.google.inject.Provides;
 import java.awt.Color;
@@ -25,12 +25,12 @@ import net.runelite.client.ui.overlay.OverlayManager;
 @PluginDescriptor(
 		name = "Runesky Video Player"
 )
-public class ExamplePlugin extends Plugin
+public class RuneskyVideoPlugin extends Plugin
 {
 	private static final String CONFIG_GROUP = "videoskyboxtest";
 
 	@Inject
-	private ExampleConfig config;
+	private RuneskyVideoConfig config;
 
 	@Inject
 	private ConfigManager configManager;
@@ -39,7 +39,7 @@ public class ExamplePlugin extends Plugin
 	private OverlayManager overlayManager;
 
 	@Inject
-	private ExampleOverlay overlay;
+	private RuneskyVideoOverlay overlay;
 
 	@Inject
 	private ClientToolbar clientToolbar;
@@ -257,7 +257,7 @@ public class ExamplePlugin extends Plugin
 		updatePanelStatus();
 	}
 
-	public void setVideoAlignment(ExampleConfig.VideoAlignment value)
+	public void setVideoAlignment(RuneskyVideoConfig.VideoAlignment value)
 	{
 		configManager.setConfiguration(CONFIG_GROUP, "videoAlignment", value);
 		updatePanelStatus();
@@ -337,7 +337,7 @@ public class ExamplePlugin extends Plugin
 		return config.fullScreen();
 	}
 
-	public ExampleConfig.VideoAlignment getVideoAlignment()
+	public RuneskyVideoConfig.VideoAlignment getVideoAlignment()
 	{
 		return config.videoAlignment();
 	}
@@ -564,8 +564,8 @@ public class ExamplePlugin extends Plugin
 	}
 
 	@Provides
-	ExampleConfig provideConfig(ConfigManager configManager)
+	RuneskyVideoConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(ExampleConfig.class);
+		return configManager.getConfig(RuneskyVideoConfig.class);
 	}
 }

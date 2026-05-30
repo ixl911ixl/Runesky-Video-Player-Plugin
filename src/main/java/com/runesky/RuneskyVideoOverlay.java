@@ -1,4 +1,4 @@
-package com.example;
+package com.runesky;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;
@@ -25,12 +25,12 @@ import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
 
-public class ExampleOverlay extends Overlay
+public class RuneskyVideoOverlay extends Overlay
 {
     private static final int FPS = 24;
 
     private final Client client;
-    private final ExampleConfig config;
+    private final RuneskyVideoConfig config;
 
     private List<Path> framePaths;
     private String loadedFramesFolder = "";
@@ -48,7 +48,7 @@ public class ExampleOverlay extends Overlay
     private String frameStatus = "No frames loaded.";
 
     @Inject
-    private ExampleOverlay(Client client, ExampleConfig config)
+    private RuneskyVideoOverlay(Client client, RuneskyVideoConfig config)
     {
         this.client = client;
         this.config = config;

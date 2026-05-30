@@ -1,4 +1,4 @@
-package com.example;
+package com.runesky;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -25,7 +25,7 @@ public class VideoAmbiencePanel extends PluginPanel
     private static final int SLIDER_MAX = 1000;
     private static final int PANEL_WIDTH = PluginPanel.PANEL_WIDTH - 20;
 
-    private final ExamplePlugin plugin;
+    private final RuneskyVideoPlugin plugin;
 
     private final JLabel statusLabel = new JLabel("", SwingConstants.CENTER);
     private final JLabel folderLabel = new JLabel("", SwingConstants.CENTER);
@@ -34,7 +34,7 @@ public class VideoAmbiencePanel extends PluginPanel
 
     private final JCheckBox fullScreenCheckBox = new JCheckBox("Full Screen");
     private final JCheckBox muteAudioCheckBox = new JCheckBox("Mute Audio");
-    private final JComboBox<ExampleConfig.VideoAlignment> alignmentComboBox = new JComboBox<>(ExampleConfig.VideoAlignment.values());
+    private final JComboBox<RuneskyVideoConfig.VideoAlignment> alignmentComboBox = new JComboBox<>(RuneskyVideoConfig.VideoAlignment.values());
 
     private final JSpinner widthSpinner = new JSpinner(new SpinnerNumberModel(100, 10, 150, 1));
     private final JSpinner heightSpinner = new JSpinner(new SpinnerNumberModel(30, 10, 100, 1));
@@ -47,7 +47,7 @@ public class VideoAmbiencePanel extends PluginPanel
     private boolean updatingSlider = false;
     private boolean updatingControls = false;
 
-    public VideoAmbiencePanel(ExamplePlugin plugin)
+    public VideoAmbiencePanel(RuneskyVideoPlugin plugin)
     {
         this.plugin = plugin;
 
@@ -157,9 +157,9 @@ public class VideoAmbiencePanel extends PluginPanel
 
         alignmentComboBox.addActionListener(e ->
         {
-            if (!updatingControls && alignmentComboBox.getSelectedItem() instanceof ExampleConfig.VideoAlignment)
+            if (!updatingControls && alignmentComboBox.getSelectedItem() instanceof RuneskyVideoConfig.VideoAlignment)
             {
-                plugin.setVideoAlignment((ExampleConfig.VideoAlignment) alignmentComboBox.getSelectedItem());
+                plugin.setVideoAlignment((RuneskyVideoConfig.VideoAlignment) alignmentComboBox.getSelectedItem());
             }
         });
 

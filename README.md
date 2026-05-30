@@ -33,3 +33,4 @@ MyMediaPack/
 ## Notes
 
 This plugin is only a local display tool. It does not include media, fetch media, recommend media sources, or provide any hosted content. All files must already exist locally on the user's computer.
+I am working on a more elegant solution to getting the Media split into individual frames and audio, but for now I would highly suggest the use of the freeware FFmpeg. It takes less than a few minutes to do a full episode of TV and handles both the frames and the audio at the same time. 
